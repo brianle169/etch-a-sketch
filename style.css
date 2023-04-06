@@ -29,3 +29,31 @@ header {
 header > * {
    margin: 0px;
 }
+
+/* MAIN BODY */
+main {
+   display: flex;
+   margin: 30px;
+   height: 600px;
+   min-width: 700px;
+   justify-content: space-between;
+   align-items: center;
+}
+
+main > #grid-container {
+   display: flex;
+   flex-direction: row;
+   flex-wrap: wrap;
+   min-width: 480px;
+   height: 480px;
+   border: 4px solid rgb(205, 156, 34);
+   background-color: #ffffff;
+}
+
+main > #modes-container {
+   display: flex;
+   flex-direction: column;
+   flex-wrap: wrap;
+   min-width: 200px;
+   height: 480px;
+}
