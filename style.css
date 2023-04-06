@@ -1,0 +1,31 @@
+* {
+   box-sizing: border-box;
+   border: 2px solid red;
+   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+      "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.page-text {
+   font-size: 18px;
+}
+
+body {
+   background-color: blanchedalmond;
+   display: flex;
+   flex-direction: column;
+   min-height: 100vh;
+   margin: 30px;
+   justify-content: flex-start;
+   align-items: center;
+}
+
+header {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   row-gap: 10px;
+}
+
+header > * {
+   margin: 0px;
+}
