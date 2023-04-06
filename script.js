@@ -36,7 +36,7 @@ rainbowButton.onclick = () => {
 
 sizeSlider.oninput = (e) => {
    console.log(e.target.value);
-   sliderLabel.textContent = `${e.target.value} × ${e.target.value} `;
+   sliderLabel.textContent = `(${e.target.value} × ${e.target.value}) `;
 };
 
 sizeSlider.onchange = (e) => {
