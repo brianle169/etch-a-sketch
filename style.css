@@ -1,6 +1,6 @@
 * {
    box-sizing: border-box;
-   border: 2px solid red;
+   /* border: 2px solid red; */
    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
       "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
@@ -69,4 +69,18 @@ button {
 
 .buttonPressed {
    background-color: rgb(165, 115, 97);
+}
+
+#slider-container {
+   display: flex;
+   margin: 0px;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   row-gap: 10px;
+}
+
+#slider-container #size-slider {
+   width: 180px;
+   margin: 0;
 }
