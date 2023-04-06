@@ -1,6 +1,7 @@
 const grid = document.getElementById("grid-container");
 const DEFAULT_CANVAS_COLOR = "#ffffff"; //white background
-const DEFAULT_GRID_SIZE = 64; //16 cells per side;
+const DEFAULT_PAINT_COLOR = "#000000";
+const DEFAULT_GRID_SIZE = 16; //16 cells per side;
 const modeSelected = false;
 const DEFAULT_GRID_CONTAINER_SIZE =
    document.getElementById("grid-container").clientHeight; //pixels
@@ -12,16 +13,16 @@ const eraserButton = document.getElementById("eraser-button");
 const rainbowButton = document.getElementById("rainbow-button");
 const paintButton = document.getElementById("paint-button");
 const sizeSlider = document.getElementById("size-slider");
+const sliderLabel = document.querySelector("label#slider-value");
 
 //Input values
 const DEFAULT_MODE = paintButton;
-let currentColor = DEFAULT_CANVAS_COLOR;
+let currentColor = DEFAULT_PAINT_COLOR;
 let currentMode = null;
 
 clearButton.onclick = () => clearCanvas();
 colorPicker.oninput = (e) => {
    changeCurrentColor(e.target.value);
-   activateMode(paintButton);
 };
 paintButton.onclick = () => {
    activateMode(paintButton);
@@ -31,6 +32,17 @@ eraserButton.onclick = () => {
 };
 rainbowButton.onclick = () => {
    activateMode(rainbowButton);
+};
+
+sizeSlider.oninput = (e) => {
+   console.log(e.target.value);
+   sliderLabel.textContent = `${e.target.value} × ${e.target.value} `;
+};
+
+sizeSlider.onchange = (e) => {
+   grid.innerHTML = "";
+   drawGrid(e.target.value);
+   activateMode(paintButton);
 };
 
 let mouseDown = false;
@@ -104,4 +116,8 @@ function clearCanvas() {
    cells.forEach((cell) => (cell.style.backgroundColor = DEFAULT_CANVAS_COLOR));
 }
 
-drawGrid(DEFAULT_GRID_SIZE);
+//IIFE
+(() => {
+   drawGrid(DEFAULT_GRID_SIZE);
+   activateMode(paintButton);
+})();
