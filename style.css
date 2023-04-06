@@ -33,7 +33,6 @@ header > * {
 /* MAIN BODY */
 main {
    display: flex;
-   margin: 30px;
    height: 600px;
    min-width: 700px;
    justify-content: space-between;
