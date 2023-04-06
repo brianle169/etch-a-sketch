@@ -53,7 +53,20 @@ main > #grid-container {
 main > #modes-container {
    display: flex;
    flex-direction: column;
-   flex-wrap: wrap;
-   min-width: 200px;
+   width: 200px;
    height: 480px;
+   justify-content: center;
+   align-items: center;
+   row-gap: 20px;
+}
+
+button {
+   background-color: rgb(254, 169, 138);
+   height: 40px;
+   min-width: 150px;
+   border-radius: 15px;
+}
+
+.buttonPressed {
+   background-color: rgb(165, 115, 97);
 }
