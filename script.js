@@ -1,12 +1,12 @@
-const grid = document.getElementById("grid-container");
+//Default values
 const DEFAULT_CANVAS_COLOR = "#ffffff"; //white background
 const DEFAULT_PAINT_COLOR = "#000000";
 const DEFAULT_GRID_SIZE = 16; //16 cells per side;
-const modeSelected = false;
 const DEFAULT_GRID_CONTAINER_SIZE =
    document.getElementById("grid-container").clientHeight; //pixels
 
 //Components;
+const grid = document.getElementById("grid-container");
 const colorPicker = document.getElementById("color-picker");
 const clearButton = document.getElementById("clear-button");
 const eraserButton = document.getElementById("eraser-button");
