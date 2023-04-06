@@ -14,6 +14,7 @@ const rainbowButton = document.getElementById("rainbow-button");
 const paintButton = document.getElementById("paint-button");
 const sizeSlider = document.getElementById("size-slider");
 const sliderLabel = document.querySelector("label#slider-value");
+const fillButton = document.getElementById("fill-button");
 
 //Input values
 const DEFAULT_MODE = paintButton;
@@ -21,6 +22,7 @@ let currentColor = DEFAULT_PAINT_COLOR;
 let currentMode = null;
 
 clearButton.onclick = () => clearCanvas();
+fillButton.onclick = () => fillCanvas();
 colorPicker.oninput = (e) => {
    changeCurrentColor(e.target.value);
 };
@@ -114,6 +116,11 @@ function componentToHex(c) {
 function clearCanvas() {
    let cells = document.querySelectorAll(".cell");
    cells.forEach((cell) => (cell.style.backgroundColor = DEFAULT_CANVAS_COLOR));
+}
+
+function fillCanvas() {
+   let cells = document.querySelectorAll(".cell");
+   cells.forEach((cell) => (cell.style.backgroundColor = currentColor));
 }
 
 //IIFE
