@@ -98,19 +98,10 @@ function changeColor(e) {
       let r = Math.floor(Math.random() * 255);
       let g = Math.floor(Math.random() * 255);
       let b = Math.floor(Math.random() * 255);
-      e.target.style.backgroundColor = rgbToHex(r, g, b);
+      e.target.style["background-color"] = `rgb(${r}, ${g}, ${b})`;
    } else if (currentMode === eraserButton) {
       e.target.style.backgroundColor = DEFAULT_CANVAS_COLOR;
    }
-}
-
-function rgbToHex(r, g, b) {
-   return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
-}
-
-function componentToHex(c) {
-   var hex = c.toString(16);
-   return hex.length == 1 ? "0" + hex : hex;
 }
 
 function clearCanvas() {
