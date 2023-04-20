@@ -13,7 +13,7 @@ const eraserButton = document.getElementById("eraser-button");
 const rainbowButton = document.getElementById("rainbow-button");
 const paintButton = document.getElementById("paint-button");
 const sizeSlider = document.getElementById("size-slider");
-const sliderLabel = document.querySelector("label#slider-value");
+const sliderOutput = document.querySelector("#slider-value");
 const fillButton = document.getElementById("fill-button");
 
 //Input values
@@ -37,8 +37,7 @@ rainbowButton.onclick = () => {
 };
 
 sizeSlider.oninput = (e) => {
-   console.log(e.target.value);
-   sliderLabel.textContent = `(${e.target.value} × ${e.target.value}) `;
+   sliderOutput.textContent = `(${sizeSlider.value} × ${sizeSlider.value}) `;
 };
 
 sizeSlider.onchange = (e) => {
